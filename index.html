@@ -5,65 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rupak Mansingh, QA Engineer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Portfolio of Rupak Mansingh, ISTQB-certified Senior QA Engineer in Berlin with 16+ years in testing and test automation.">
+<meta name="description" content="Rupak Mansingh, ISTQB-certified Senior QA Engineer and SDET in Berlin. 16+ years in testing, Playwright and TypeScript, API-first test strategy, AI-assisted testing.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rupak Mansingh, Senior QA Engineer &amp; SDET">
+<meta property="og:description" content="16+ years in testing. Playwright + TypeScript, API-first test strategy, flaky tests 15% to under 1%, AI-assisted testing with Claude Code.">
+<meta property="og:url" content="https://rupak101.github.io/">
+<meta property="og:image" content="https://rupak101.github.io/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f5fa8'/%3E%3Cpath d='M18 33l9 9 19-20' stroke='white' stroke-width='7' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a single reading column with a test-run report beside the hero; work shown as case files, career as a dated timeline. */
+/* Layout: one reading column. Hero with a results card, then what I want, one featured repo, three case files, a short timeline, toolkit, credentials, contact. */
 :root{
   --paper:#f5f7fa; --surface:#ffffff; --ink:#121b27; --muted:#56637a; --line:#d9dfe8;
-  --accent:#1f5fa8; --accent-soft:#e6eef8; --pass:#17794b; --pass-soft:#e3f3ea; --warn:#a2560f;
+  --accent:#1f5fa8; --accent-soft:#e6eef8; --pass:#17794b; --pass-soft:#e3f3ea; --fail:#b4462f; --fail-soft:#f8e6e1;
   --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
   --body:"Public Sans","Segoe UI",Arial,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
-  --step-0:1rem; --step-1:1.2rem; --step-2:1.55rem; --step-3:2.1rem; --step-4:clamp(2.4rem,6vw,3.7rem);
+  --step-1:1.2rem; --step-3:2.1rem; --step-4:clamp(2.4rem,6vw,3.7rem);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#0f141c; --surface:#161d28; --ink:#e7ecf3; --muted:#9aa7bb; --line:#2a3445;
-  --accent:#7fb0ec; --accent-soft:#1c2a3d; --pass:#5fcf95; --pass-soft:#16291f; --warn:#e7a35b; color-scheme:dark}}
+  --accent:#7fb0ec; --accent-soft:#1c2a3d; --pass:#5fcf95; --pass-soft:#16291f; --fail:#f0957f; --fail-soft:#33201b; color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#0f141c; --surface:#161d28; --ink:#e7ecf3; --muted:#9aa7bb; --line:#2a3445;
-  --accent:#7fb0ec; --accent-soft:#1c2a3d; --pass:#5fcf95; --pass-soft:#16291f; --warn:#e7a35b; color-scheme:dark}
+  --accent:#7fb0ec; --accent-soft:#1c2a3d; --pass:#5fcf95; --pass-soft:#16291f; --fail:#f0957f; --fail-soft:#33201b; color-scheme:dark}
 
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:1080px;margin:0 auto}
 a{color:var(--accent);text-underline-offset:3px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.15;margin:0}
 p{margin:0}
-.mono{font-family:var(--mono)}
+.nw{white-space:nowrap}
 .label{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
-/* nav */
 nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:22px;border-bottom:1px solid var(--line)}
 nav .who{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none}
 nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
 nav ul a{color:var(--muted);text-decoration:none;font-size:.92rem}
 nav ul a:hover{color:var(--accent)}
 
-/* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;padding-block:56px 64px;align-items:start}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;padding-block:56px 60px;align-items:start}
 .hero-id{display:flex;gap:20px;align-items:center;margin-bottom:26px}
 .hero-id img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--line);flex:none}
 .hero h1{font-size:var(--step-4);font-weight:700;letter-spacing:-.02em}
 .role{font-family:var(--display);font-size:var(--step-1);color:var(--accent);font-weight:600;margin-top:6px}
-.lede{font-size:1.12rem;color:var(--ink);max-width:36em;margin-top:6px}
+.lede{font-size:1.12rem;max-width:36em}
 .facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{font-size:.84rem;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{font-family:var(--body);font-weight:600;font-size:.95rem;padding:11px 18px;border-radius:8px;text-decoration:none;border:1px solid var(--accent);cursor:pointer}
+.btn{font-family:var(--body);font-weight:600;font-size:.95rem;padding:11px 18px;border-radius:8px;text-decoration:none;border:1px solid var(--accent);display:inline-flex;align-items:center;gap:8px}
 .btn.primary{background:var(--accent);color:var(--paper)}
 .btn.ghost{background:transparent;color:var(--accent)}
 
-/* the run report */
 .report{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-family:var(--mono);font-size:.85rem}
 .report header{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line);color:var(--muted)}
 .badge{color:var(--pass);background:var(--pass-soft);padding:2px 9px;border-radius:999px;font-weight:500;white-space:nowrap}
 .report ol{list-style:none;margin:0;padding:8px 0}
-.report li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;padding:9px 16px;align-items:baseline}
+.report li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;padding:10px 16px;align-items:baseline}
 .report li+li{border-top:1px dashed var(--line)}
 .tick{color:var(--pass)}
 .report .name{color:var(--ink);font-family:var(--body);font-size:.9rem}
@@ -75,82 +79,123 @@ section{padding-block:56px;border-top:1px solid var(--line)}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
 .sec-head h2{font-size:var(--step-3);font-weight:700;letter-spacing:-.01em}
 
-/* about */
-.about{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px}
-.about p+p{margin-top:14px}
-.about .prose{max-width:62ch}
-.pillars{display:grid;gap:14px;align-content:start}
-.pillar{padding-left:14px;border-left:2px solid var(--accent)}
-.pillar b{display:block;font-family:var(--display);font-size:1.02rem}
-.pillar span{color:var(--muted);font-size:.93rem}
+/* looking for */
+.want{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.want div{padding:18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.want div:nth-child(3n){border-right:0}
+.want div:nth-last-child(-n+3){border-bottom:0}
+.want dt{margin-bottom:4px}
+.want dd{margin:0;font-weight:500}
 
-/* case files */
-.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.case{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px}
-.case .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.case h3{font-size:var(--step-1);font-weight:700}
-.case p{color:var(--muted);font-size:.95rem}
-.case .result{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);font-family:var(--mono);font-size:.84rem;color:var(--pass)}
+/* featured repo */
+.repo{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.repo .main{padding:28px;display:flex;flex-direction:column;gap:14px}
+.repo .path{font-family:var(--mono);font-size:.9rem;color:var(--muted)}
+.repo .path b{color:var(--ink);font-weight:500}
+.repo h3{font-size:1.45rem}
+.repo p{color:var(--muted)}
+.repo ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:.95rem}
+.repo .ai{padding:28px;background:var(--accent-soft);display:flex;flex-direction:column;gap:12px}
+.repo .ai h4{font-family:var(--display);font-size:1.1rem;margin:0}
+.repo .ai ol{margin:0;padding-left:20px;display:grid;gap:8px;font-size:.93rem}
+.repo .note{font-size:.85rem;color:var(--muted)}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font-family:var(--mono);font-size:.74rem;padding:2px 8px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.repo .ai .tag{background:var(--surface)}
+
+/* case files */
+.cases{display:grid;gap:20px}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.case>div{padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.case>div+div{border-left:1px solid var(--line)}
+.case h3{font-size:var(--step-1)}
+.case p,.case li{color:var(--muted);font-size:.94rem}
+.case ul{margin:0;padding-left:18px;display:grid;gap:5px}
+.case .res{font-family:var(--mono);color:var(--pass);font-size:.9rem;font-weight:500}
+.case .ctxline{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+
+/* diagrams */
+.layers{display:grid;gap:6px;justify-items:center;margin-top:4px}
+.layer{font-family:var(--mono);font-size:.76rem;padding:7px 10px;border-radius:6px;text-align:center}
+.layer.e2e{width:42%;background:var(--accent-soft);color:var(--accent)}
+.layer.api{width:100%;background:var(--accent);color:var(--paper)}
+.bars{display:grid;gap:8px;margin-top:4px}
+.bar{display:grid;grid-template-columns:52px minmax(0,1fr) 44px;gap:8px;align-items:center;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.bar .track{height:12px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar .fill{height:100%;border-radius:999px}
+.bar .v{color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
+.flow{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:6px}
+.flow li{font-family:var(--mono);font-size:.76rem;padding:6px 10px;border:1px solid var(--line);border-radius:6px;color:var(--ink);position:relative}
+.flow li+li::before{content:"↓";position:absolute;top:-17px;left:12px;color:var(--muted);font-size:.8rem}
+.flow{gap:12px}
+.flow li.me{border-color:var(--accent);color:var(--accent)}
 
 /* timeline */
 .timeline{list-style:none;margin:0;padding:0;display:grid}
-.job{display:grid;grid-template-columns:170px minmax(0,1fr);gap:28px;padding-block:22px;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:170px minmax(0,1fr);gap:28px;padding-block:20px;border-top:1px solid var(--line)}
 .job:first-child{border-top:0;padding-top:0}
 .when{font-family:var(--mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:4px}
-.job h3{font-size:1.18rem;font-weight:700}
+.job h3{font-size:1.15rem}
 .job h3 small{font-family:var(--body);font-weight:500;color:var(--accent);font-size:1rem}
 .job .ctx{color:var(--muted);font-size:.92rem;font-style:italic;margin-top:2px}
 .job ul{margin:10px 0 0;padding-left:18px;display:grid;gap:5px;font-size:.95rem}
-.clients{display:grid;gap:12px;margin-top:10px}
-.clients div b{font-weight:600}
-.clients div span{display:block;color:var(--muted);font-size:.92rem}
+.tcs{list-style:none;padding:0!important}
+.tcs li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px}
+.tcs li span{color:var(--muted)}
+.tcs .d{font-family:var(--mono);font-size:.8rem;color:var(--muted);white-space:nowrap}
 
 /* toolkit */
-.kit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 32px}
-.kit h3{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
-.kit ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.kit li{font-size:.88rem;padding:4px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.kit{display:grid;gap:22px}
+.tier{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;align-items:start}
+.tier h3{font-family:var(--display);font-size:1.02rem}
+.tier h3 small{display:block;font-family:var(--mono);font-size:.74rem;color:var(--muted);font-weight:400;margin-top:2px;letter-spacing:.04em}
+.tier ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tier li{font-size:.88rem;padding:4px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.tier.now li{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
 
-/* recognition + education */
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+/* credentials */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
 .list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:baseline}
-.list .tick{font-family:var(--mono)}
-.list small{display:block;color:var(--muted);font-size:.88rem}
-.langs{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px}
-.langs span{font-size:.93rem}
+.list small{display:block;color:var(--muted);font-size:.86rem}
+.ach{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 40px}
+.langs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.langs li{display:flex;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
 .langs b{font-weight:600}
+.langs span{color:var(--muted);text-align:right}
+.h3s{font-size:1.25rem;margin-bottom:16px}
 
-/* contact */
 .contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:start}
 .contact h2{font-size:var(--step-3)}
 .contact p{color:var(--muted);margin-top:12px;max-width:46ch}
 .channels{display:grid;gap:10px}
 .channel{display:grid;grid-template-columns:90px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
-.channel .v{font-family:var(--mono);font-size:.88rem;overflow-wrap:anywhere;user-select:all}
+.channel .v{font-family:var(--mono);font-size:.88rem;overflow-wrap:anywhere}
 .copy{font-family:var(--mono);font-size:.76rem;background:transparent;color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:4px 9px;cursor:pointer}
 footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-@media (max-width:860px){
-  .hero,.about,.two,.contact{grid-template-columns:minmax(0,1fr);gap:32px}
-  .cases{grid-template-columns:minmax(0,1fr)}
-  .kit{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){
+  .hero,.contact,.repo{grid-template-columns:minmax(0,1fr);gap:32px}
+  .repo{gap:0}
+  .case{grid-template-columns:minmax(0,1fr)}
+  .case>div+div{border-left:0;border-top:1px solid var(--line)}
+  .three{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .want{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .want div{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+  .want div:nth-child(2n){border-right:0!important}
+  .want div:nth-last-child(-n+2){border-bottom:0!important}
 }
-@media (max-width:560px){
-  .job{grid-template-columns:minmax(0,1fr);gap:4px}
-  .kit{grid-template-columns:minmax(0,1fr)}
-  nav ul{gap:14px}
+@media (max-width:600px){
+  .job,.tier{grid-template-columns:minmax(0,1fr);gap:6px}
+  .three,.ach{grid-template-columns:minmax(0,1fr)}
+  .want{grid-template-columns:minmax(0,1fr)}
+  .want div{border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .want div:last-child{border-bottom:0!important}
+  .tcs li{grid-template-columns:minmax(0,1fr)}
   .channel{grid-template-columns:minmax(0,1fr) auto}
   .channel .label{grid-column:1/-1}
   .hero{padding-block:36px 44px}
-}
-@media (prefers-reduced-motion:no-preference){
-  .report li{animation:rise .5s ease both}
-  .report li:nth-child(2){animation-delay:.08s}.report li:nth-child(3){animation-delay:.16s}
-  .report li:nth-child(4){animation-delay:.24s}.report li:nth-child(5){animation-delay:.32s}
-  @keyframes rise{from{transform:translateY(4px);opacity:.35}to{transform:none;opacity:1}}
+  .repo .main,.repo .ai{padding:22px}
 }
 </style>
 
@@ -160,6 +205,7 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
 <nav aria-label="Main">
   <a class="who" href="#top">Rupak Mansingh</a>
   <ul>
+    <li><a href="#project">Project</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#toolkit">Toolkit</a></li>
@@ -176,93 +222,106 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
         <div class="role">Senior QA Engineer &amp; SDET</div>
       </div>
     </div>
-    <p class="lede">ISTQB-certified QA engineer in Berlin with 16+ years in testing. I build test automation frameworks that teams trust, for payments, banking, Web3 and e-commerce products, and I use AI tools to make testing faster without giving up on review.</p>
+    <p class="lede">ISTQB-certified QA engineer in Berlin with 16+ years in testing. I make CI something a team can trust: test strategy that puts most coverage at the API level, quality gates on every pull request, and flaky tests fixed at the root instead of retried. I also use AI to write tests faster, and I review everything it produces.</p>
     <div class="facts">
       <span class="chip">Berlin, Germany</span>
-      <span class="chip">Permanent resident, no sponsorship needed</span>
+      <span class="chip">Permanent Resident (PR), Germany</span>
+      <span class="chip">No sponsorship needed</span>
+      <span class="chip">Open to relocation within Germany</span>
       <span class="chip">US B1 visa</span>
-      <span class="chip">Open to new roles</span>
     </div>
     <div class="cta">
-      <a class="btn primary" href="#contact">Get in touch</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/rupak-kumar-mansingh" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn ghost" href="https://github.com/rupak101" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn primary" href="https://github.com/rupak101/playwright-typescript-test" target="_blank" rel="noopener">View my framework on GitHub</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
+      <a class="btn ghost" href="Rupak_Mansingh_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
     </div>
   </div>
 
-  <aside class="report" aria-label="Career highlights shown as a test run">
-    <header><span>career.spec.ts</span><span class="badge">5 passed</span></header>
+  <aside class="report" aria-label="Key results">
+    <header><span>Impact at a glance</span><span class="badge">Key results</span></header>
     <ol>
       <li><span class="tick">✓</span><span class="name">Flaky test rate at Token.io</span><span class="val"><s>15%</s> → &lt;1%</span></li>
       <li><span class="tick">✓</span><span class="name">Test-writing time per feature with Claude Code</span><span class="val"><s>6 h</s> → 1 h</span></li>
       <li><span class="tick">✓</span><span class="name">CI run time after merging 4 test repos</span><span class="val">−50%</span></li>
-      <li><span class="tick">✓</span><span class="name">Years in software testing</span><span class="val">16+</span></li>
-      <li><span class="tick">✓</span><span class="name">Years of hands-on test automation</span><span class="val">10+</span></li>
+      <li><span class="tick">✓</span><span class="name">Years in testing, 15+ of them hands-on automation</span><span class="val">16+</span></li>
     </ol>
-    <footer>Playwright · TypeScript · GitHub Actions</footer>
+    <footer>Playwright · TypeScript · GitHub Actions · Claude Code</footer>
   </aside>
 </header>
 
-<section id="about" aria-labelledby="about-h">
-  <div class="about">
-    <div class="prose">
-      <div class="sec-head"><h2 id="about-h">How I work</h2></div>
-      <p>I started in QA in November 2010 at Tata Consultancy Services and have led automation for clients like Vodafone and QIAGEN. Since 2017 I've worked in Berlin product companies: an AI contract-data platform, a meal-kit menu platform, a mobile bank, a Web3 gaming studio, and now open banking payments at Token.io.</p>
-      <p>Most of my coverage sits at the API level, with fewer end-to-end tests for the journeys that matter most. Every pull request runs through a quality gate, and when a test fails I want to know why, not just retry it. I fix flakiness at the root, write bug reports a developer can follow without coming back to me, and make it easy for others to add tests in the same structure.</p>
+<section id="looking" aria-labelledby="want-h">
+  <div class="sec-head"><h2 id="want-h">What I'm looking for</h2><span class="label">Employee or contract</span></div>
+  <dl class="want">
+    <div><dt class="label">Roles</dt><dd>Senior QA / QA Automation Engineer, SDET or QA Lead</dd></div>
+    <div><dt class="label">Where</dt><dd>Berlin, anywhere in Germany (ready to relocate) or remote in Germany / EU</dd></div>
+    <div><dt class="label">Contract</dt><dd>Permanent employee or contract</dd></div>
+    <div><dt class="label">Domains</dt><dd>Payments, banking, Web3, e-commerce, SaaS</dd></div>
+    <div><dt class="label">Right to work</dt><dd>PR in Germany, no sponsorship needed</dd></div>
+    <div><dt class="label">Working language</dt><dd>English; German A2, learning B1</dd></div>
+  </dl>
+</section>
+
+<section id="project" aria-labelledby="proj-h">
+  <div class="sec-head"><h2 id="proj-h">Featured project</h2><span class="label">Public on GitHub</span></div>
+  <article class="repo">
+    <div class="main">
+      <div class="path">rupak101 / <b>playwright-typescript-test</b></div>
+      <h3>A Playwright + TypeScript framework set up for <span class="nw">AI-assisted</span> testing</h3>
+      <p>A public demo framework that shows how I structure UI tests. It runs against a public practice web shop.</p>
+      <ul>
+        <li>Page Object Model with a <code>BasePage</code> and a <code>PageFactory</code>, injected into tests through custom fixtures.</li>
+        <li>Data-driven specs, with test data and expected UI text kept in their own folders.</li>
+        <li>Strict TypeScript, ESLint, Prettier and Husky as gates before any commit.</li>
+        <li>Docker and GitHub Actions, with Allure and HTML reports.</li>
+        <li>A custom failure reporter that groups failed tests by their first error and gives a rerun command for each.</li>
+      </ul>
+      <div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">POM</span><span class="tag">Allure</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span></div>
+      <div><a class="btn ghost" href="https://github.com/rupak101/playwright-typescript-test" target="_blank" rel="noopener">Open the repository</a></div>
     </div>
-    <div class="pillars">
-      <div class="pillar"><b>Frameworks built from scratch</b><span>Playwright, WebdriverIO, Cypress and Selenium frameworks for payments, banking and Web3.</span></div>
-      <div class="pillar"><b>Release ownership</b><span>Release manager at Token.io, promoting builds from staging to sandbox to production with Argo CD.</span></div>
-      <div class="pillar"><b>AI-assisted testing</b><span>Claude Code skills that write, triage and review tests. I review everything they produce.</span></div>
-      <div class="pillar"><b>Mentoring</b><span>Led QA teams at Leverton and Vodafone; mentor new QA engineers today.</span></div>
+    <div class="ai">
+      <h4>How the AI works inside the rules</h4>
+      <ol>
+        <li><code>CLAUDE.md</code> loads the framework guide, so generated code follows the same rules as mine.</li>
+        <li>The <code>/add-test</code> command explores the flow in a real browser first, reuses page objects, then runs the checks and the test until both pass.</li>
+        <li><code>settings.json</code> blocks the agent from reading <code>.env</code> and formats every file it edits.</li>
+        <li>Lint, type checks and the tests reject generated code that breaks the rules, the same as hand-written code.</li>
+      </ol>
+      <p class="note">While building it, the agent found that the site's test password had changed before any test code was written.</p>
+      <div class="tags"><span class="tag">Claude Code</span><span class="tag">CLAUDE.md</span><span class="tag">custom commands</span></div>
     </div>
-  </div>
+  </article>
 </section>
 
 <section id="work" aria-labelledby="work-h">
-  <div class="sec-head"><h2 id="work-h">Selected work</h2><span class="label">Case files</span></div>
+  <div class="sec-head"><h2 id="work-h">Selected work</h2><span class="label">Token.io · A2A payments</span></div>
   <div class="cases">
     <article class="case">
-      <div class="meta"><span class="label">Token.io · 2024 – now</span></div>
-      <h3>A2A payment test framework, built from scratch</h3>
-      <p>I built the API and UI test framework for account-to-account payments in Playwright and TypeScript: one helper per API endpoint, reusable fixtures, page objects, and setup files that only create data. It runs as a quality gate in GitHub Actions on every pull request. Payments are asynchronous, so tests poll each payment until it reaches a final state and fail fast with the payment ID, which I trace into Kibana through a trace header.</p>
-      <div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">GitHub Actions</span><span class="tag">Allure</span><span class="tag">Kibana</span><span class="tag">k6</span></div>
-      <div class="result">✓ team trusts CI to make the release call</div>
+      <div><span class="ctxline">Problem</span><h3>Testing asynchronous payments across APIs and a dashboard</h3><p>Payments are asynchronous and finish later, so UI tests alone would be slow and fragile.</p></div>
+      <div><span class="ctxline">Approach</span><ul><li>Most coverage at the API level, a few <span class="nw">end-to-end</span> tests for key journeys.</li><li>One helper per API endpoint, reusable fixtures, setup files that only create data.</li><li>Tests poll each payment until a final state and fail fast with the payment ID, traced in Kibana.</li></ul></div>
+      <div><span class="ctxline">Result</span>
+        <div class="layers" aria-label="Test layers: few end-to-end tests on top of a wide API layer"><span class="layer e2e">UI end-to-end · key journeys</span><span class="layer api">API tests · most coverage</span></div>
+        <p class="res">✓ quality gate on every pull request</p><p>The team uses CI to decide whether a release can go out.</p></div>
     </article>
     <article class="case">
-      <div class="meta"><span class="label">Token.io · flakiness</span></div>
-      <h3>From 15% flaky runs to under 1%</h3>
-      <p>I went through the flaky tests one by one. Fixed waits became polling for the real status. Shared accounts became a fresh test member per test, so tests can run in parallel. Environment problems went to the right team with evidence. Retries now run only in CI and are reported as flaky, and the flake rate is tracked as a metric.</p>
-      <div class="tags"><span class="tag">root cause analysis</span><span class="tag">test data</span><span class="tag">parallel runs</span></div>
-      <div class="result">✓ flake rate 15% → &lt;1%</div>
+      <div><span class="ctxline">Problem</span><h3>15% of test runs failed for reasons unrelated to the code</h3><p>When red builds are normal, people stop trusting CI and start rerunning it.</p></div>
+      <div><span class="ctxline">Approach</span><ul><li>Fixed waits replaced with polling for the real status.</li><li>A fresh test member per test instead of shared accounts, so tests run in parallel.</li><li>Environment issues taken to the right team with evidence.</li><li>Retries only in CI, reported as flaky, and the flake rate tracked as a metric.</li></ul></div>
+      <div><span class="ctxline">Result</span>
+        <div class="bars" aria-label="Flaky test rate before 15 percent, after under 1 percent">
+          <div class="bar"><span>before</span><span class="track"><span class="fill" style="display:block;width:100%;background:var(--fail)"></span></span><span class="v">15%</span></div>
+          <div class="bar"><span>after</span><span class="track"><span class="fill" style="display:block;width:6.7%;background:var(--pass)"></span></span><span class="v">&lt;1%</span></div>
+        </div>
+        <p class="res">✓ flake rate 15% → &lt;1%</p></div>
     </article>
     <article class="case">
-      <div class="meta"><span class="label">Token.io · AI in testing</span></div>
-      <h3>Claude Code skills for test writing and triage</h3>
-      <p>I wrote Claude Code skills and a project CLAUDE.md that write Playwright tests from specs, triage flaky failures and review test pull requests. I review every result before it goes in.</p>
-      <div class="tags"><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">GitHub Copilot</span></div>
-      <div class="result">✓ test-writing time per feature 6 h → 1 h</div>
-    </article>
-    <article class="case">
-      <div class="meta"><span class="label">Token.io · test infrastructure</span></div>
-      <h3>Four test repositories, one monorepo</h3>
-      <p>I led the merge of four separate test repositories into one monorepo, with shared code and a contributing guide plus scaffolding scripts so developers and new QA engineers add tests the same way. My Engineering Manager recognised the work.</p>
-      <div class="tags"><span class="tag">monorepo</span><span class="tag">CI/CD</span><span class="tag">Argo CD</span></div>
-      <div class="result">✓ CI run time −50%</div>
-    </article>
-    <article class="case">
-      <div class="meta"><span class="label">Pixel Vault · 2022 – 2024</span></div>
-      <h3>Web3 regression in CI</h3>
-      <p>For a Web3 gaming platform with NFTs, a metaverse and a DAO, I built the automation framework with Playwright and WebdriverIO, automated MetaMask and other wallets for on-chain flows, and tested NFT raffles, drops and block snapshots on Ethereum testnets, with Hardhat for local blockchain testing.</p>
-      <div class="tags"><span class="tag">WebdriverIO</span><span class="tag">MetaMask</span><span class="tag">Hardhat</span><span class="tag">Sepolia</span></div>
-      <div class="result">✓ Web3 regression running in CI</div>
-    </article>
-    <article class="case">
-      <div class="meta"><span class="label">Nuri · 2020 – 2022</span></div>
-      <h3>Banking automation on Mambu</h3>
-      <p>For a mobile bank with core banking on Mambu and a DeFi wallet, I built the test automation framework including the Mambu integration, wrote API and microservice tests in BDD with Cucumber and REST Assured, added Cypress UI tests, and tested the iOS and Android app on real devices.</p>
-      <div class="tags"><span class="tag">REST Assured</span><span class="tag">Cucumber</span><span class="tag">Cypress</span><span class="tag">TestRail</span></div>
-      <div class="result">✓ regression suite added to CI</div>
+      <div><span class="ctxline">Problem</span><h3>Writing tests for each new feature took about 6 hours</h3></div>
+      <div><span class="ctxline">Approach</span><p>Claude Code skills, backed by a project CLAUDE.md, that write Playwright tests from specs, triage flaky failures and review test pull requests.</p>
+        <ol class="flow" aria-label="Workflow"><li>Spec</li><li>Skill drafts the test</li><li class="me">I review every change</li><li>CI quality gate</li></ol></div>
+      <div><span class="ctxline">Result</span>
+        <div class="bars" aria-label="Test-writing time per feature before 6 hours, after 1 hour">
+          <div class="bar"><span>before</span><span class="track"><span class="fill" style="display:block;width:100%;background:var(--muted)"></span></span><span class="v">6 h</span></div>
+          <div class="bar"><span>after</span><span class="track"><span class="fill" style="display:block;width:16.7%;background:var(--pass)"></span></span><span class="v">1 h</span></div>
+        </div>
+        <p class="res">✓ 6 h → 1 h per feature</p></div>
     </article>
   </div>
 </section>
@@ -276,9 +335,11 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
         <h3>Senior QA Automation Engineer <small>· Token.io, Berlin</small></h3>
         <p class="ctx">A2A (open banking) payment infrastructure for European banks and payment companies.</p>
         <ul>
-          <li>Built and own the Playwright + TypeScript framework for payment APIs and the Token Dashboard.</li>
-          <li>Release manager: staging → sandbox → production with Argo CD, release notes, Slack announcements.</li>
-          <li>k6 load tests on payment APIs, feature-flag testing with ConfigCat, mentoring new QA engineers.</li>
+          <li>Built and own the Playwright + TypeScript framework for the payment APIs and the Token Dashboard.</li>
+          <li>Led the merge of 4 test repositories into one monorepo, cutting CI run time by 50%.</li>
+          <li>Release manager from staging to sandbox to production with Argo CD, with release notes.</li>
+          <li>k6 load tests on the payment APIs and feature-flag testing with ConfigCat.</li>
+          <li>Mentor new QA engineers through a contributing guide, scaffolding scripts and pairing.</li>
         </ul>
       </div>
     </li>
@@ -288,7 +349,8 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
         <h3>Senior QA Engineer <small>· Pixel Vault, Berlin</small></h3>
         <p class="ctx">Web3 gaming platform (NFTs, metaverse, DAO) with games built in Unity.</p>
         <ul>
-          <li>Built the Web3 automation framework with Playwright and WebdriverIO (POM), regression in GitHub Actions.</li>
+          <li>Built the Web3 test automation framework with Playwright and WebdriverIO (POM), with regression in GitHub Actions.</li>
+          <li>Automated MetaMask and other wallets to test on-chain flows end to end; Hardhat for local blockchain tests.</li>
           <li>Tested NFT raffles, drops, snapshots and a DAO voting system on Ethereum testnets.</li>
         </ul>
       </div>
@@ -297,10 +359,11 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
       <div class="when">Oct 2020 – Aug 2022</div>
       <div>
         <h3>Senior QA Engineer (SDET) <small>· Nuri, Berlin</small></h3>
-        <p class="ctx">Mobile banking and wealth app, core banking on Mambu, DeFi and crypto wallet.</p>
+        <p class="ctx">Mobile banking and wealth app with core banking on Mambu, plus a DeFi wallet.</p>
         <ul>
-          <li>Built the banking automation framework incl. Mambu integration, regression in CI.</li>
-          <li>API tests in BDD with Cucumber + REST Assured; Cypress UI tests; led defect triage in TestRail.</li>
+          <li>Built the banking test automation framework, including the Mambu integration, with regression in CI.</li>
+          <li>API and microservice tests in BDD with Cucumber and REST Assured; Cypress UI tests (POM).</li>
+          <li>Tested the iOS and Android app on real devices and led defect triage in TestRail.</li>
         </ul>
       </div>
     </li>
@@ -309,72 +372,87 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
       <div>
         <h3>Senior QA Engineer <small>· HelloFresh, Berlin</small></h3>
         <p class="ctx">Menu platform for a global meal-kit company.</p>
-        <ul><li>Web and API automation with Selenium WebDriver (Java), Cucumber and Cypress, running in Jenkins.</li></ul>
+        <ul>
+          <li>Owned web and API automation for the menu-platform team with Selenium (Java), Cucumber and Cypress in Jenkins.</li>
+          <li>Estimated QA effort and wrote the automation test plan for each sprint.</li>
+        </ul>
       </div>
     </li>
     <li class="job">
       <div class="when">Jan 2017 – Oct 2018</div>
       <div>
         <h3>Lead QA Engineer <small>· Leverton, Berlin</small></h3>
-        <p class="ctx">AI-based platform for contract and lease data extraction.</p>
-        <ul><li>Led QA for web and API, set the test strategy, managed a team of 2; Selenium (Java) + Cucumber framework in Jenkins.</li></ul>
+        <p class="ctx">AI-based SaaS platform for contract and lease data extraction.</p>
+        <ul>
+          <li>Led QA for web and API, set the test strategy and managed a team of 2; Selenium (Java) + Cucumber in Jenkins.</li>
+        </ul>
       </div>
     </li>
     <li class="job">
       <div class="when">Nov 2010 – Dec 2016</div>
       <div>
-        <h3>Test Automation Lead <small>· Tata Consultancy Services</small></h3>
-        <p class="ctx">Düsseldorf, Germany and Bhubaneswar, India.</p>
-        <div class="clients">
-          <div><b>Vodafone</b> · Feb – Dec 2016<span>Led mobile and web automation (Appium, SeeTest, Selenium, Cucumber, Jenkins) and managed the automation team.</span></div>
-          <div><b>QIAGEN</b> · Apr 2015 – Jan 2016<span>Automation lead for B2B/B2C e-commerce (Selenium, TestNG, Cucumber, Jenkins); strategy for security, performance and browser-compatibility testing.</span></div>
-          <div><b>BG International, Oxford University Press, TCS iON</b> · 2010 – 2015<span>Data-driven Selenium (Java) and HP QTP/UFT frameworks; administered HP QC/ALM.</span></div>
-        </div>
+        <h3>Tata Consultancy Services <small>· Düsseldorf &amp; Bhubaneswar</small></h3>
+        <p class="ctx">From automation engineer to automation lead across telecom, e-commerce, energy and education.</p>
+        <ul class="tcs">
+          <li><span><b>Vodafone</b> · led mobile and web automation and the automation team</span><span class="d">2016</span></li>
+          <li><span><b>QIAGEN</b> · automation lead for the B2B/B2C e-commerce portal</span><span class="d">2015 – 2016</span></li>
+          <li><span><b>BG International</b> · automation lead and QC admin for SAP MM and IBM Maximo</span><span class="d">2013 – 2015</span></li>
+          <li><span><b>Oxford University Press</b> · data-driven Selenium (Java) tests</span><span class="d">2012 – 2013</span></li>
+          <li><span><b>TCS iON</b> · automated HRMS, payroll, finance and online assessment</span><span class="d">2010 – 2012</span></li>
+        </ul>
       </div>
     </li>
   </ol>
 </section>
 
 <section id="toolkit" aria-labelledby="kit-h">
-  <div class="sec-head"><h2 id="kit-h">Toolkit</h2><span class="label">Used in production work</span></div>
+  <div class="sec-head"><h2 id="kit-h">Toolkit</h2></div>
   <div class="kit">
-    <div><h3>Test automation</h3><ul><li>Playwright</li><li>Cypress</li><li>WebdriverIO</li><li>Selenium</li><li>Appium</li><li>Page Object Model</li><li>Cucumber (BDD)</li><li>Mocha</li><li>TestNG</li></ul></div>
-    <div><h3>Languages</h3><ul><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li></ul></div>
-    <div><h3>API testing</h3><ul><li>REST APIs</li><li>Postman</li><li>REST Assured</li><li>Axios</li><li>Charles Proxy</li><li>Chrome DevTools</li></ul></div>
-    <div><h3>CI/CD &amp; cloud</h3><ul><li>GitHub Actions</li><li>Jenkins</li><li>Docker</li><li>AWS</li><li>Argo CD</li><li>Maven</li><li>Gradle</li><li>Git · GitHub · GitLab</li></ul></div>
-    <div><h3>AI-assisted testing</h3><ul><li>Claude Code</li><li>GitHub Copilot</li><li>MCP</li></ul></div>
-    <div><h3>Web3</h3><ul><li>MetaMask</li><li>Hardhat</li><li>Ethereum testnets</li><li>DAO voting</li><li>DeFi wallets</li></ul></div>
-    <div><h3>Quality &amp; reporting</h3><ul><li>Allure</li><li>Kibana</li><li>k6</li><li>ConfigCat</li><li>MySQL</li><li>MariaDB</li></ul></div>
-    <div><h3>Test management</h3><ul><li>Jira</li><li>TestRail</li><li>Zephyr</li><li>HP ALM/QC</li></ul></div>
-    <div><h3>Ways of working</h3><ul><li>Scrum</li><li>Kanban</li><li>Test strategy</li><li>Release management</li><li>Mentoring</li></ul></div>
+    <div class="tier"><h3>Test automation</h3><ul><li>Playwright</li><li>Cypress</li><li>WebdriverIO</li><li>Selenium WebDriver (Java)</li><li>Appium</li><li>SeeTest</li><li>Page Object Model</li><li>Cucumber (BDD)</li><li>Mocha</li><li>TestNG</li></ul></div>
+    <div class="tier"><h3>Programming Languages</h3><ul><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li></ul></div>
+    <div class="tier"><h3>API testing</h3><ul><li>REST APIs</li><li>REST Assured</li><li>Postman</li><li>Axios</li><li>Charles Proxy</li></ul></div>
+    <div class="tier"><h3>CI/CD &amp; cloud</h3><ul><li>GitHub Actions</li><li>Jenkins</li><li>Docker</li><li>AWS</li><li>Argo CD</li><li>Maven</li><li>Gradle</li></ul></div>
+    <div class="tier"><h3>AI-assisted testing</h3><ul><li>Claude Code</li><li>GitHub Copilot</li><li>MCP</li></ul></div>
+    <div class="tier"><h3>Quality &amp; reporting</h3><ul><li>Allure</li><li>Kibana</li><li>k6</li><li>ConfigCat</li><li>MySQL</li><li>MariaDB</li></ul></div>
+    <div class="tier"><h3>Web3</h3><ul><li>MetaMask</li><li>Hardhat</li><li>Ethereum testnets</li></ul></div>
+    <div class="tier"><h3>Ways of working</h3><ul><li>Test strategy</li><li>Release management</li><li>Scrum</li><li>Kanban</li><li>Jira</li><li>TestRail</li><li>Zephyr</li><li>Mentoring</li></ul></div>
   </div>
 </section>
 
-<section aria-labelledby="rec-h">
-  <div class="two">
+<section id="credentials" aria-labelledby="ach-h">
+  <div class="sec-head"><h2 id="ach-h">Achievements</h2><span class="label">Recognised by</span></div>
+  <ul class="list ach">
+    <li><span class="tick">✓</span><span>Leading the merge of test repositories into one monorepo<small>Engineering Manager, Token.io</small></span></li>
+    <li><span class="tick">✓</span><span>Adding Web3 regression automation to CI<small>Engineering Manager, Pixel Vault</small></span></li>
+    <li><span class="tick">✓</span><span>Adding regression automation tests to CI<small>Head of Engineering, Nuri</small></span></li>
+    <li><span class="tick">✓</span><span>Successful delivery of e-commerce Release v1.0<small>E-commerce Project Manager, TCS</small></span></li>
+    <li><span class="tick">✓</span><span>Zero-defect delivery of the iON Online Assessment<small>Global Head of iON, TCS</small></span></li>
+    <li><span class="tick">✓</span><span>“Customer Delight” award<small>ER Account event, TCS</small></span></li>
+  </ul>
+</section>
+
+<section aria-label="Education, certifications and languages">
+  <div class="three">
     <div>
-      <div class="sec-head"><h2 id="rec-h">Recognition</h2></div>
-      <ul class="list">
-        <li><span class="tick">✓</span><span>Appreciated by the Engineering Manager at Token.io for leading the monorepo migration.</span></li>
-        <li><span class="tick">✓</span><span>Appreciated by the Engineering Manager at Pixel Vault for adding Web3 regression to CI.</span></li>
-        <li><span class="tick">✓</span><span>Appreciated by the Head of Engineering at Nuri for adding regression to CI.</span></li>
-        <li><span class="tick">✓</span><span>Zero-defect delivery of the iON Online Assessment, and the TCS “Customer Delight” award.</span></li>
-      </ul>
+      <h2 class="h3s">Education</h2>
+      <ul class="list"><li><span class="tick">✓</span><span>Bachelor in Information Technology (82.80%)<small>KIIT University, India · 2006 – 2010</small></span></li></ul>
     </div>
     <div>
-      <div class="sec-head"><h2>Education</h2></div>
+      <h2 class="h3s">Certifications</h2>
       <ul class="list">
-        <li><span class="tick">✓</span><span>Bachelor in Information Technology (82.80%)<small>KIIT University, Bhubaneswar · 2006 – 2010</small></span></li>
-        <li><span class="tick">✓</span><span>ISTQB Certified Tester, Foundation Level (CTFL)<small>2012</small></span></li>
-        <li><span class="tick">✓</span><span>Learn AI Tools &amp; Build AI Agents for Software Testing<small>Claude Code, GitHub Copilot, MCP, Playwright · 2026</small></span></li>
+        <li><span class="tick">✓</span><span>ISTQB Certified Tester, Foundation Level<small>2012</small></span></li>
+        <li><span class="tick">✓</span><span>Learn AI Tools &amp; Build AI Agents for Software Testing<small>Claude Code, Copilot, MCP, Playwright · 2026</small></span></li>
         <li><span class="tick">✓</span><span>AI Fluency: Framework &amp; Foundations<small>Anthropic · 2026</small></span></li>
       </ul>
-      <div class="langs" aria-label="Languages">
-        <span><b>English</b> full professional</span>
-        <span><b>German</b> A2, learning B1</span>
-        <span><b>Hindi</b> native</span>
-        <span><b>Odia</b> native</span>
-      </div>
+    </div>
+    <div id="languages">
+      <h2 class="h3s">Languages</h2>
+      <ul class="langs">
+        <li><b>English</b><span>Full professional</span></li>
+        <li><b>German</b><span>A2, learning B1</span></li>
+        <li><b>Hindi</b><span>Native</span></li>
+        <li><b>Odia</b><span>Native</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -383,7 +461,7 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
   <div class="contact">
     <div>
       <h2 id="contact-h">Let's talk about your next release</h2>
-      <p>I'm open to Senior QA, SDET and QA lead roles in Germany or remote. I live in Berlin, have the right to work in the EU and don't need visa sponsorship.</p>
+      <p>I'm open to Senior QA / QA Automation Engineer, SDET or QA Lead roles, as an employee or on contract, in Berlin, anywhere in Germany (I'm ready to relocate) or remote. The quickest way to reach me is email or LinkedIn.</p>
     </div>
     <div class="channels">
       <div class="channel"><span class="label">Email</span><span class="v" id="email">rupak101@gmail.com</span><button class="copy" type="button" data-copy="email">Copy</button></div>
@@ -393,7 +471,7 @@ footer.page{padding-block:28px 40px;border-top:1px solid var(--line);color:var(-
   </div>
 </section>
 
-<footer class="page"><span>Rupak Mansingh · Senior QA Engineer · Berlin</span><span class="mono">all checks passed</span></footer>
+<footer class="page"><span>Rupak Mansingh · Senior QA Engineer · Berlin</span><span>Open to Senior QA / QA Automation Engineer, SDET or QA Lead roles · Berlin, relocation within Germany or remote</span></footer>
 </div>
 
 <script>
